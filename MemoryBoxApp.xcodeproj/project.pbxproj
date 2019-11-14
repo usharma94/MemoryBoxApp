@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E6992B6237DCB2600243400 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B5237DCB2600243400 /* SignUpViewController.swift */; };
+		4E6992B8237DCB4A00243400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B7237DCB4A00243400 /* HomeViewController.swift */; };
+		4E6992BA237DCC4000243400 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B9237DCC4000243400 /* AddMemoryViewController.swift */; };
+		4E6992BE237DCC8700243400 /* MemoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992BD237DCC8700243400 /* MemoryDetailViewController.swift */; };
+		4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */; };
+		4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */; };
 		6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */; };
 		6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */; };
-		6EF2CE8F2377BFC5005E64E4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8E2377BFC5005E64E4 /* SignUpViewController.swift */; };
+		6EF2CE8F2377BFC5005E64E4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8E2377BFC5005E64E4 /* SignInViewController.swift */; };
 		6EF2CE922377BFC5005E64E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE902377BFC5005E64E4 /* Main.storyboard */; };
 		6EF2CE942377BFC6005E64E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE932377BFC6005E64E4 /* Assets.xcassets */; };
 		6EF2CE972377BFC6005E64E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE952377BFC6005E64E4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E6992B5237DCB2600243400 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4E6992B7237DCB4A00243400 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4E6992B9237DCC4000243400 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
+		4E6992BD237DCC8700243400 /* MemoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailViewController.swift; sourceTree = "<group>"; };
+		4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewController.swift; sourceTree = "<group>"; };
+		4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMapViewController.swift; sourceTree = "<group>"; };
 		6EF2CE872377BFC5005E64E4 /* MemoryBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6EF2CE8E2377BFC5005E64E4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6EF2CE8E2377BFC5005E64E4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		6EF2CE912377BFC5005E64E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EF2CE932377BFC6005E64E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF2CE962377BFC6005E64E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +49,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E6992B2237DCAA300243400 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2CE8E2377BFC5005E64E4 /* SignInViewController.swift */,
+				4E6992B5237DCB2600243400 /* SignUpViewController.swift */,
+				4E6992B7237DCB4A00243400 /* HomeViewController.swift */,
+				4E6992B9237DCC4000243400 /* AddMemoryViewController.swift */,
+				4E6992BD237DCC8700243400 /* MemoryDetailViewController.swift */,
+				4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */,
+				4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E6992B3237DCAA800243400 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E6992B4237DCAAC00243400 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		6EF2CE7E2377BFC5005E64E4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +96,11 @@
 		6EF2CE892377BFC5005E64E4 /* MemoryBoxApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E6992B4237DCAAC00243400 /* controller */,
+				4E6992B3237DCAA800243400 /* model */,
+				4E6992B2237DCAA300243400 /* view */,
 				6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */,
 				6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */,
-				6EF2CE8E2377BFC5005E64E4 /* SignUpViewController.swift */,
 				6EF2CE902377BFC5005E64E4 /* Main.storyboard */,
 				6EF2CE932377BFC6005E64E4 /* Assets.xcassets */,
 				6EF2CE952377BFC6005E64E4 /* LaunchScreen.storyboard */,
@@ -138,8 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF2CE8F2377BFC5005E64E4 /* SignUpViewController.swift in Sources */,
+				4E6992B8237DCB4A00243400 /* HomeViewController.swift in Sources */,
+				6EF2CE8F2377BFC5005E64E4 /* SignInViewController.swift in Sources */,
+				4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */,
 				6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */,
+				4E6992BE237DCC8700243400 /* MemoryDetailViewController.swift in Sources */,
+				4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */,
+				4E6992BA237DCC4000243400 /* AddMemoryViewController.swift in Sources */,
+				4E6992B6237DCB2600243400 /* SignUpViewController.swift in Sources */,
 				6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

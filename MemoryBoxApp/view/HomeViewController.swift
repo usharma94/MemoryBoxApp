@@ -9,13 +9,26 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+@IBOutlet weak var newMemoryButton: UIButton!
+    @IBOutlet weak var viewMemoryButton: UIButton!
+    @IBOutlet weak var memoryMapButton:
+    UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButtons()
 
         // Do any additional setup after loading the view.
     }
     
+    private func setupButtons(){
+        
+        newMemoryButton.layer.cornerRadius = 20
+        viewMemoryButton.layer.cornerRadius = 20
+        memoryMapButton.layer.cornerRadius = 20
+       
+        
+    }
 
     /*
     // MARK: - Navigation

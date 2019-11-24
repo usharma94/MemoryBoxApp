@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
     
-    //Outlets
+    //Outlets Textfiels
     
+    @IBOutlet weak var txtEmail: UITextField!
+    
+    
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    //Buttons
     @IBOutlet weak var signupButton: UIButton!
     //Properties
     @IBOutlet weak var loginButton: UIButton!
@@ -20,8 +27,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         setupButtons()
-
-
+        
+        
     }
     //Private functions
     
@@ -34,7 +41,39 @@ class SignInViewController: UIViewController {
         
     }
     //Functions
-
-
+    
+    @IBAction func login(_ sender: UIButton) {
+        
+        if(txtEmail.text != "" && txtPassword.text != "")
+        {
+            
+            Auth.auth().signIn(withEmail: txtEmail.text!, password:  txtPassword.text!, completion: {(user, error)  in
+                
+                if user != nil{
+                    print("Successfully Signed In")
+                    self.transitionToHome()
+                }else{
+                    if let myError = error?.localizedDescription
+                    {
+                        print(myError)
+                    }else{
+                        print("Failed to Login")
+                    }
+                    
+                }
+            })
+            
+        }
+        
+    }
+    
+    func transitionToHome() {
+          
+          let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+          let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene") as! HomeViewController
+          navigationController?.pushViewController(homeVC, animated: true)
+          
+      }
+    
 }
 

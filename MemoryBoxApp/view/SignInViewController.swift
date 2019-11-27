@@ -23,6 +23,8 @@ class SignInViewController: UIViewController {
     //Properties
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var errorLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,8 +58,12 @@ class SignInViewController: UIViewController {
                     if let myError = error?.localizedDescription
                     {
                         print(myError)
+                        self.errorLbl.alpha = 1
+                        self.errorLbl.text = "Invalid Login"
+                       
                     }else{
                         print("Failed to Login")
+                        
                     }
                     
                 }

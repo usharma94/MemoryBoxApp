@@ -20,10 +20,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblErrorMsg: UILabel!
     
+    @IBOutlet weak var signupBtn: UIButton!
     
     //dont touch
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupButtons()
         
         // Do any additional setup after loading the view.
     }
@@ -45,7 +48,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func btnSignUp(_ sender: Any) {
-        
+    
         //validate the fields
         let error = validateFields()
         
@@ -90,6 +93,13 @@ class SignUpViewController: UIViewController {
         }
         
     }
+    
+    private func setupButtons(){
+          
+          signupBtn.layer.cornerRadius = 20
+          
+          
+      }
     
     func showError(_ message: String){
         lblErrorMsg.text = message

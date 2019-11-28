@@ -15,12 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gift.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qXE-TF-6df">
-                                <rect key="frame" x="62" y="373.5" width="290" height="206"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qXE-TF-6df">
+                                <rect key="frame" x="62" y="343.5" width="290" height="206"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="gf2-2H-bKB"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.71527927467847785" green="0.95818535598060184" blue="0.98328930139541626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.7584605753" green="0.244688723" blue="0.32071547340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qXE-TF-6df" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IHX-IE-zff"/>
                             <constraint firstItem="qXE-TF-6df" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="NAK-yc-ECN"/>

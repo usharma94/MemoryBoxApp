@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
-@IBOutlet weak var newMemoryButton: UIButton!
+    @IBOutlet weak var newMemoryButton: UIButton!
     @IBOutlet weak var viewMemoryButton: UIButton!
     @IBOutlet weak var memoryMapButton:
     UIButton!
     
+    @IBOutlet weak var logoutBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Auth.auth().currentUser?.email
+        
         setupButtons()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,18 +32,17 @@ class HomeViewController: UIViewController {
         newMemoryButton.layer.cornerRadius = 20
         viewMemoryButton.layer.cornerRadius = 20
         memoryMapButton.layer.cornerRadius = 20
-       
+        logoutBtn.layer.cornerRadius = 20
+        
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func logoutClick(_ sender: UIButton) {
+        
+        try! Auth.auth().signOut()
+        print("logout successful")
+        performSegue(withIdentifier: "logoutsegue", sender: self)
     }
-    */
-
+    
 }

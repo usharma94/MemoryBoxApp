@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,14 @@
 		4E6992BE237DCC8700243400 /* MemoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992BD237DCC8700243400 /* MemoryDetailViewController.swift */; };
 		4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */; };
 		4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */; };
+		6E7EA8472386E2C10069DEF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */; };
 		6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */; };
 		6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */; };
 		6EF2CE8F2377BFC5005E64E4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8E2377BFC5005E64E4 /* SignInViewController.swift */; };
 		6EF2CE922377BFC5005E64E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE902377BFC5005E64E4 /* Main.storyboard */; };
 		6EF2CE942377BFC6005E64E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE932377BFC6005E64E4 /* Assets.xcassets */; };
 		6EF2CE972377BFC6005E64E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2CE952377BFC6005E64E4 /* LaunchScreen.storyboard */; };
+		D9CCB4D0FF75FDDAC90EEBDD /* Pods_MemoryBoxApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49CE078B1E28F60B9767071 /* Pods_MemoryBoxApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		4E6992BD237DCC8700243400 /* MemoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailViewController.swift; sourceTree = "<group>"; };
 		4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewController.swift; sourceTree = "<group>"; };
 		4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMapViewController.swift; sourceTree = "<group>"; };
+		6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF2CE872377BFC5005E64E4 /* MemoryBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		6EF2CE932377BFC6005E64E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF2CE962377BFC6005E64E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EF2CE982377BFC6005E64E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9294CA68D7A51BBD50A6B42 /* Pods-MemoryBoxApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryBoxApp.release.xcconfig"; path = "Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp.release.xcconfig"; sourceTree = "<group>"; };
+		C49CE078B1E28F60B9767071 /* Pods_MemoryBoxApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryBoxApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F011A6FBDDB3EDCFCD9ED08A /* Pods-MemoryBoxApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryBoxApp.debug.xcconfig"; path = "Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +49,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CCB4D0FF75FDDAC90EEBDD /* Pods_MemoryBoxApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40BDFC27B188E76B994022BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C49CE078B1E28F60B9767071 /* Pods_MemoryBoxApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E6992B2237DCAA300243400 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +97,8 @@
 			children = (
 				6EF2CE892377BFC5005E64E4 /* MemoryBoxApp */,
 				6EF2CE882377BFC5005E64E4 /* Products */,
+				7F927ACBA807B16821F59634 /* Pods */,
+				40BDFC27B188E76B994022BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,8 +122,18 @@
 				6EF2CE932377BFC6005E64E4 /* Assets.xcassets */,
 				6EF2CE952377BFC6005E64E4 /* LaunchScreen.storyboard */,
 				6EF2CE982377BFC6005E64E4 /* Info.plist */,
+				6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */,
 			);
 			path = MemoryBoxApp;
+			sourceTree = "<group>";
+		};
+		7F927ACBA807B16821F59634 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F011A6FBDDB3EDCFCD9ED08A /* Pods-MemoryBoxApp.debug.xcconfig */,
+				B9294CA68D7A51BBD50A6B42 /* Pods-MemoryBoxApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6EF2CE9B2377BFC6005E64E4 /* Build configuration list for PBXNativeTarget "MemoryBoxApp" */;
 			buildPhases = (
+				15DFCEBCD9BDF28DB10329B3 /* [CP] Check Pods Manifest.lock */,
 				6EF2CE832377BFC5005E64E4 /* Sources */,
 				6EF2CE842377BFC5005E64E4 /* Frameworks */,
 				6EF2CE852377BFC5005E64E4 /* Resources */,
+				A9AF384BE3C91496813EFF74 /* [CP] Embed Pods Frameworks */,
+				85007202939886F78E1E48B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,12 +198,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EF2CE972377BFC6005E64E4 /* LaunchScreen.storyboard in Resources */,
+				6E7EA8472386E2C10069DEF4 /* GoogleService-Info.plist in Resources */,
 				6EF2CE942377BFC6005E64E4 /* Assets.xcassets in Resources */,
 				6EF2CE922377BFC5005E64E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15DFCEBCD9BDF28DB10329B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MemoryBoxApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85007202939886F78E1E48B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9AF384BE3C91496813EFF74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryBoxApp/Pods-MemoryBoxApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6EF2CE832377BFC5005E64E4 /* Sources */ = {
@@ -330,6 +420,7 @@
 		};
 		6EF2CE9C2377BFC6005E64E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F011A6FBDDB3EDCFCD9ED08A /* Pods-MemoryBoxApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -348,6 +439,7 @@
 		};
 		6EF2CE9D2377BFC6005E64E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9294CA68D7A51BBD50A6B42 /* Pods-MemoryBoxApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

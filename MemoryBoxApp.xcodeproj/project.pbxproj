@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E32B016239047BC002F0FE0 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E32B015239047BC002F0FE0 /* Memory.swift */; };
 		4E6992B6237DCB2600243400 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B5237DCB2600243400 /* SignUpViewController.swift */; };
 		4E6992B8237DCB4A00243400 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B7237DCB4A00243400 /* HomeViewController.swift */; };
 		4E6992BA237DCC4000243400 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992B9237DCC4000243400 /* AddMemoryViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E32B015239047BC002F0FE0 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		4E6992B5237DCB2600243400 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4E6992B7237DCB4A00243400 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4E6992B9237DCC4000243400 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		4E6992B3237DCAA800243400 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4E32B015239047BC002F0FE0 /* Memory.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */,
 				4E6992BA237DCC4000243400 /* AddMemoryViewController.swift in Sources */,
 				4E6992B6237DCB2600243400 /* SignUpViewController.swift in Sources */,
+				4E32B016239047BC002F0FE0 /* Memory.swift in Sources */,
 				6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

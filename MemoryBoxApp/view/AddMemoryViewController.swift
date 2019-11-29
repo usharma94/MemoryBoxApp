@@ -73,38 +73,7 @@ class AddMemoryViewController: UIViewController {
         }
         return false
     }
-    
-    func downloadImg() {
-        let query = Firestore.firestore()
-            .collection("imagesCollection")
-            .whereField("uid", isEqualTo: "uid")
-        
-        query.getDocuments { (snapshot, err) in
-            if let err = err {
-                print("\(err.localizedDescription)")
-                return
-            }
-            
-            guard let snapshot = snapshot,
-                let data = snapshot.documents.first?.data(),
-                let urlString = data["imageUrl"] as? String,
-                let url = URL(string: urlString) else {
-                print("Something went wrong with uploading image!")
-                return
-            }
-            
-            let resource = ImageResource(downloadURL: url)
-            self.imageView.kf.setImage(with: resource, completionHandler: { (result) in
-                switch result {
-                case .success(_):
-                    print("successfully downloaded image from database")
-                case .failure(let err):
-                    print("\(err.localizedDescription)")
-                }
-            })
-        }
-    }
-    
+
     func uploadImg() {
         guard let image = imageView.image, let data = image.jpegData(compressionQuality: 1.0) else {
             print("Something went wrong with uploading image!")

@@ -6,41 +6,82 @@
 //  Copyright © 2019 Upma  Sharma. All rights reserved.
 //
 
+import FirebaseStorage
+import FirebaseFirestore
+import Kingfisher
 import UIKit
 
 class MemoryTableViewController: UITableViewController {
+    
+    private var memoryList = [Memory]()
+    
+    let memoryController = MemoryController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.loadMemories()
     }
-
-    // MARK: - Table view data source
-
+    
+    func loadMemories() {
+        self.memoryController.getAllMemories() { list in
+            self.memoryList = list
+            self.tableView.reloadData()
+        }
+    }
+    
+    func downloadImg(imageView: UIImageView, uid: String) {
+        let query = Firestore.firestore()
+            .collection("imagesCollection")
+            .whereField("uid", isEqualTo: uid)
+        
+        query.getDocuments { (snapshot, err) in
+            if let err = err {
+                print("\(err.localizedDescription)")
+                return
+            }
+            
+            guard let snapshot = snapshot,
+                let data = snapshot.documents.first?.data(),
+                let urlString = data["imageUrl"] as? String,
+                let url = URL(string: urlString) else {
+                print("Something went wrong with uploading image!")
+                return
+            }
+            
+            let resource = ImageResource(downloadURL: url)
+            imageView.kf.setImage(with: resource, completionHandler: { (result) in
+                switch result {
+                case .success(_):
+                    print("successfully downloaded image from database")
+                case .failure(let err):
+                    print("\(err.localizedDescription)")
+                }
+            })
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return memoryList.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_memory", for: indexPath) as! MemoryCell
+        
+        if indexPath.row < memoryList.count
+        {
+            let memory = memoryList[indexPath.row]
+            cell.memoryName.text = memory.memoryName
+            cell.memoryDesc.text = memory.memoryDesc
+            self.downloadImg(imageView: cell.memoryImg, uid: memory.memoryImage)
+        }
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

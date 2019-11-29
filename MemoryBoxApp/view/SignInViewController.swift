@@ -48,7 +48,6 @@ class SignInViewController: UIViewController {
         
         if(txtEmail.text != "" && txtPassword.text != "")
         {
-            
             Auth.auth().signIn(withEmail: txtEmail.text!, password:  txtPassword.text!, completion: {(user, error)  in
                 
                 if user != nil{

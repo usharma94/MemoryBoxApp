@@ -493,8 +493,15 @@
                                         <state key="normal" title="Add Memory">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createMemory" destination="vGu-f6-OBg" eventType="touchDown" id="Bdu-go-eEY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="X2h-v0-HdQ" firstAttribute="top" secondItem="akV-PP-k8I" secondAttribute="bottom" constant="10" id="8d2-9X-nxD"/>
+                                    <constraint firstItem="akV-PP-k8I" firstAttribute="top" secondItem="6bG-q1-IgU" secondAttribute="bottom" constant="10" id="Wee-h9-uuk"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -509,6 +516,11 @@
                     <navigationItem key="navigationItem" id="aC5-R3-9Sa"/>
                     <connections>
                         <outlet property="addMemoryBtn" destination="L1I-qL-xJe" id="ZTb-bQ-edn"/>
+                        <outlet property="imageView" destination="akV-PP-k8I" id="HMO-OU-fDH"/>
+                        <outlet property="memoryDate" destination="3Sm-7l-iSW" id="ef3-S6-WCQ"/>
+                        <outlet property="memoryDesc" destination="AGa-w5-wMn" id="mA2-cb-Lzb"/>
+                        <outlet property="memoryMap" destination="KYA-U2-zqk" id="re8-cz-osf"/>
+                        <outlet property="memoryName" destination="kdH-Yy-j4h" id="f0u-8K-u4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYq-yy-4tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,18 +531,43 @@
         <scene sceneID="CwU-AO-cNT">
             <objects>
                 <tableViewController id="SFB-36-MWy" customClass="MemoryTableViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ugg-TY-Hm5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ugg-TY-Hm5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="haM-Gy-tt6">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_memory" rowHeight="100" id="haM-Gy-tt6" customClass="MemoryCell" customModule="MemoryBoxApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="haM-Gy-tt6" id="JX9-FO-GZx">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7YU-pg-gv0">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMc-zd-aWG">
+                                            <rect key="frame" x="164" y="11" width="200" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMn-X0-APV">
+                                            <rect key="frame" x="164" y="40" width="200" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memoryDesc" destination="hMn-X0-APV" id="fXe-9i-XWp"/>
+                                    <outlet property="memoryImg" destination="7YU-pg-gv0" id="49m-aa-2vK"/>
+                                    <outlet property="memoryName" destination="oMc-zd-aWG" id="eOs-5t-jsa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -542,7 +579,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxB-84-f9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2770" y="108"/>
+            <point key="canvasLocation" x="2769.5652173913045" y="107.8125"/>
         </scene>
         <!--Memory Detail View Controller-->
         <scene sceneID="rAs-jF-iNy">
@@ -595,6 +632,7 @@
     <resources>
         <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="64" height="60"/>
         <image name="background3" width="4000" height="2667"/>
+        <image name="background4" width="416" height="130"/>
         <image name="gift.fill" catalog="system" width="64" height="64"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="mappin.circle" catalog="system" width="64" height="60"/>

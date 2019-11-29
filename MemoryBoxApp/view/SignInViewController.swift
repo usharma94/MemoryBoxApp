@@ -36,10 +36,10 @@ class SignInViewController: UIViewController {
     
     private func setupButtons(){
         
-        signupButton.layer.cornerRadius = 20
         loginButton.layer.cornerRadius = 20
-        loginButton.layer.borderWidth = 3
-        loginButton.layer.borderColor = UIColor.white.cgColor
+        signupButton.layer.cornerRadius = 20
+        signupButton.layer.borderWidth = 3
+        signupButton.layer.borderColor = UIColor.white.cgColor
         
     }
     //Functions

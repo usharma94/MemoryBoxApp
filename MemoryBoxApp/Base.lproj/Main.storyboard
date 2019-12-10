@@ -42,6 +42,34 @@
             </objects>
             <point key="canvasLocation" x="4139" y="108"/>
         </scene>
+        <!--User List Table View Controller-->
+        <scene sceneID="zUa-5s-HkI">
+            <objects>
+                <tableViewController storyboardIdentifier="UserList" id="DiL-Fs-OkM" customClass="UserListTableViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zBt-oK-GY6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uX4-Pq-nap">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX4-Pq-nap" id="fRx-jk-K4t">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DiL-Fs-OkM" id="6zP-K4-ebI"/>
+                            <outlet property="delegate" destination="DiL-Fs-OkM" id="wBh-1W-iEg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4G-ec-MFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4945" y="108"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BBs-GE-38f">
             <objects>
@@ -67,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background3" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-pk-ee4">
-                                <rect key="frame" x="0.0" y="-1.5" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-V2-upA">
                                 <rect key="frame" x="87" y="718" width="240" height="40"/>
@@ -368,9 +396,6 @@
                                         <state key="normal" title="Memory Map" image="mappin.circle" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="Aom-8p-yqi" kind="show" id="TeG-Vg-ozH"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3S-cc-Ak8">
                                         <rect key="frame" x="0.0" y="330" width="334" height="60"/>
@@ -433,30 +458,30 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdH-Yy-j4h">
-                                        <rect key="frame" x="0.0" y="30.5" width="374" height="48.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdH-Yy-j4h">
+                                        <rect key="frame" x="0.0" y="30.5" width="374" height="95.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egd-ys-vAZ">
-                                        <rect key="frame" x="0.0" y="89" width="374" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Memory Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egd-ys-vAZ">
+                                        <rect key="frame" x="0.0" y="136" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-w5-wMn">
-                                        <rect key="frame" x="0.0" y="119.5" width="374" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-w5-wMn">
+                                        <rect key="frame" x="0.0" y="166.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-q1-IgU">
-                                        <rect key="frame" x="0.0" y="163.5" width="374" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akV-PP-k8I">
-                                        <rect key="frame" x="0.0" y="194" width="374" height="177"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="akV-PP-k8I">
+                                        <rect key="frame" x="0.0" y="241" width="374" height="130"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2h-v0-HdQ">
                                         <rect key="frame" x="0.0" y="381" width="374" height="20.5"/>
@@ -494,7 +519,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="createMemory" destination="vGu-f6-OBg" eventType="touchDown" id="Bdu-go-eEY"/>
+                                            <action selector="createMemory" destination="vGu-f6-OBg" eventType="touchDown" id="rTG-Vv-UqK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -515,7 +540,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aC5-R3-9Sa"/>
                     <connections>
-                        <outlet property="addMemoryBtn" destination="L1I-qL-xJe" id="ZTb-bQ-edn"/>
+                        <outlet property="addMemoryBtn" destination="L1I-qL-xJe" id="7GF-TW-pj9"/>
                         <outlet property="imageView" destination="akV-PP-k8I" id="HMO-OU-fDH"/>
                         <outlet property="memoryDate" destination="3Sm-7l-iSW" id="ef3-S6-WCQ"/>
                         <outlet property="memoryDesc" destination="AGa-w5-wMn" id="mA2-cb-Lzb"/>
@@ -584,9 +609,9 @@
         <!--Memory Detail View Controller-->
         <scene sceneID="rAs-jF-iNy">
             <objects>
-                <viewController id="Aom-8p-yqi" customClass="MemoryDetailViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsScene" id="Aom-8p-yqi" customClass="MemoryDetailViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ay-3C-PD2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEMORY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-9a-Jay">
@@ -623,6 +648,13 @@
                         <viewLayoutGuide key="safeArea" id="KSI-4R-OIM"/>
                     </view>
                     <navigationItem key="navigationItem" id="8NP-wp-rgE"/>
+                    <connections>
+                        <outlet property="imageView" destination="fej-js-ZTl" id="kh2-e5-73e"/>
+                        <outlet property="memoryDate" destination="LnD-KX-YXa" id="PPo-iC-qRG"/>
+                        <outlet property="memoryDesc" destination="XGy-7A-Va6" id="W59-hm-bAi"/>
+                        <outlet property="memoryMap" destination="S4x-o3-7di" id="dQA-Nu-GgP"/>
+                        <outlet property="memoryName" destination="Dv9-9a-Jay" id="KGq-eJ-H2M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMZ-FH-7TG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

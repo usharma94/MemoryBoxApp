@@ -32,6 +32,12 @@ class SignUpViewController: UIViewController {
     }
     //check fields and validate that data is correct, if corret returns nil
     
+    //***********************************
+    //***********************************
+    //NON UI CODE NEEDS TO BE MOVED TO CONTROLLER 
+    //***********************************
+    //***********************************
+    
     func validateFields() -> String? {
         
         //check all fields filled in

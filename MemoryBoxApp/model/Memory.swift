@@ -23,4 +23,6 @@ class Memory {
         self.xCord = x
         self.yCord = y
     }
+    
+    init() {}
 }

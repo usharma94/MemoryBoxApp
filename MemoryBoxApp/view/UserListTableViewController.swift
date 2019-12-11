@@ -1,61 +1,46 @@
 //
-//  MemoryTableViewController.swift
+//  UserListTableViewController.swift
 //  MemoryBoxApp
 //
-//  Created by Duncan Levings on 2019-11-14.
+//  Created by Duncan Levings on 2019-12-10.
 //  Copyright © 2019 Upma  Sharma. All rights reserved.
 //
 
 import UIKit
 
-class MemoryTableViewController: UITableViewController {
-    
-    private var memoryList = [Memory]()
-    
-    let memoryController = MemoryController()
+class UserListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadMemories()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func loadMemories() {
-        self.memoryController.getAllMemories() { list in
-            self.memoryList = list
-            self.tableView.reloadData()
-        }
-    }
-    
+
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memoryList.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
-    
+
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_memory", for: indexPath) as! MemoryCell
-        
-        if indexPath.row < memoryList.count
-        {
-            let memory = memoryList[indexPath.row]
-            cell.memoryName.text = memory.memoryName
-            cell.memoryDesc.text = memory.memoryDesc
-            self.memoryController.downloadImg(imageView: cell.memoryImg, uid: memory.memoryImage)
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memory = memoryList[indexPath.row]
-        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailsVC = mainSB.instantiateViewController(withIdentifier: "DetailsScene") as! MemoryDetailViewController
-        detailsVC.memory = memory
-        navigationController?.pushViewController(detailsVC, animated: true)
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

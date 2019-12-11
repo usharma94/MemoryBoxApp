@@ -22,6 +22,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signupBtn: UIButton!
     
+    let userController = UserController()
+    
     //dont touch
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,41 +65,19 @@ class SignUpViewController: UIViewController {
             showError(error!)
         }else{
             
-            let firstName = txtFirstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = txtLastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let phone = txtPhone.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let firstName = (txtFirstName.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+            let lastName = (txtLastName.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+            let phone = (txtPhone.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+            let email = (txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+            let password = (txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
             //create the user
-            Auth.auth().createUser(withEmail: email!, password: password!) { (result, err) in
-                
-                //check for errors
-                if let err = err{
-                    //there was an error
-                    self.showError("Error creating new user")
-                    print(err.localizedDescription)
-                }else{
-                    
-                    // User was created successfully, now store the first name and last name
-                    let db = Firestore.firestore()
-                    
-                    db.collection("users").addDocument(data: ["email": email!,"first_name":firstName!, "last_name":lastName!, "phone": phone!, "uid": result!.user.uid , "user_memory": []]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            self.showError("Error saving user data")
-                            print(error?.localizedDescription)
-                        }
-                    }
-                    
-                    // Transition to the home screen
-                    self.transitionToHome()
-                }
-            }
-            //transition to home screen
+            let newUser = User(firstName: firstName, lastName: lastName, phone: phone, email: email, password: password, userMemory: [])
             
+            self.userController.createUser(newUser: newUser)
+            // Transition to the home screen
+            self.transitionToHome()
         }
-        
+            
     }
     
     private func setupButtons(){

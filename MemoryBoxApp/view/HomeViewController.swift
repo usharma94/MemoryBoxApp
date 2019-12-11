@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var memoryMapButton:
     UIButton!
     
+    @IBOutlet weak var manualButton: UIButton!
+    
     @IBOutlet weak var logoutBtn: UIButton!
     
     
@@ -33,6 +35,7 @@ class HomeViewController: UIViewController {
         viewMemoryButton.layer.cornerRadius = 20
         memoryMapButton.layer.cornerRadius = 20
         logoutBtn.layer.cornerRadius = 20
+        manualButton.layer.cornerRadius = 20
         
         
     }

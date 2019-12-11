@@ -17,6 +17,10 @@
 		4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */; };
 		4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */; };
 		4EF0E1F123A04E930040E764 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E1F023A04E930040E764 /* UserListTableViewController.swift */; };
+		6E6A340423A186AE00556F98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340323A186AE00556F98 /* User.swift */; };
+		6E6A340623A18A4300556F98 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340523A18A4300556F98 /* UserController.swift */; };
+		6E6A340823A19B7200556F98 /* ManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340723A19B7200556F98 /* ManualVC.swift */; };
+		6E6A340A23A19BF700556F98 /* AppManual.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A340923A19BF700556F98 /* AppManual.html */; };
 		6E7EA8472386E2C10069DEF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */; };
 		6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */; };
 		6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */; };
@@ -38,6 +42,10 @@
 		4E6992BF237DCCBA00243400 /* MemoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewController.swift; sourceTree = "<group>"; };
 		4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMapViewController.swift; sourceTree = "<group>"; };
 		4EF0E1F023A04E930040E764 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		6E6A340323A186AE00556F98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6E6A340523A18A4300556F98 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		6E6A340723A19B7200556F98 /* ManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualVC.swift; sourceTree = "<group>"; };
+		6E6A340923A19BF700556F98 /* AppManual.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = AppManual.html; sourceTree = "<group>"; };
 		6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF2CE872377BFC5005E64E4 /* MemoryBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				4E32B015239047BC002F0FE0 /* Memory.swift */,
+				6E6A340323A186AE00556F98 /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -100,6 +109,8 @@
 			children = (
 				4E32B01923907ED7002F0FE0 /* MemoryCell.swift */,
 				4E32B01B23908004002F0FE0 /* MemoryController.swift */,
+				6E6A340523A18A4300556F98 /* UserController.swift */,
+				6E6A340723A19B7200556F98 /* ManualVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 				6EF2CE952377BFC6005E64E4 /* LaunchScreen.storyboard */,
 				6EF2CE982377BFC6005E64E4 /* Info.plist */,
 				6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */,
+				6E6A340923A19BF700556F98 /* AppManual.html */,
 			);
 			path = MemoryBoxApp;
 			sourceTree = "<group>";
@@ -213,6 +225,7 @@
 				6E7EA8472386E2C10069DEF4 /* GoogleService-Info.plist in Resources */,
 				6EF2CE942377BFC6005E64E4 /* Assets.xcassets in Resources */,
 				6EF2CE922377BFC5005E64E4 /* Main.storyboard in Resources */,
+				6E6A340A23A19BF700556F98 /* AppManual.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,17 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6A340823A19B7200556F98 /* ManualVC.swift in Sources */,
 				4E6992B8237DCB4A00243400 /* HomeViewController.swift in Sources */,
 				4E32B01A23907ED7002F0FE0 /* MemoryCell.swift in Sources */,
 				4E32B01C23908004002F0FE0 /* MemoryController.swift in Sources */,
 				6EF2CE8F2377BFC5005E64E4 /* SignInViewController.swift in Sources */,
 				4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */,
 				6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */,
+				6E6A340423A186AE00556F98 /* User.swift in Sources */,
 				4E6992BE237DCC8700243400 /* MemoryDetailViewController.swift in Sources */,
 				4E6992C2237DCE1C00243400 /* MemoryMapViewController.swift in Sources */,
 				4E6992BA237DCC4000243400 /* AddMemoryViewController.swift in Sources */,
 				4E6992B6237DCB2600243400 /* SignUpViewController.swift in Sources */,
 				4E32B016239047BC002F0FE0 /* Memory.swift in Sources */,
+				6E6A340623A18A4300556F98 /* UserController.swift in Sources */,
 				4EF0E1F123A04E930040E764 /* UserListTableViewController.swift in Sources */,
 				6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */,
 			);

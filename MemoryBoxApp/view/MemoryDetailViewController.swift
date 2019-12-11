@@ -35,6 +35,22 @@ class MemoryDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
        self.memoryController.downloadImg(imageView: self.imageView, uid: memory.memoryImage)
+        
+        self.setupMap()
+    }
+    
+    func setupMap() {
+        self.memoryMap.mapType = MKMapType.satellite
+        
+        let location = CLLocationCoordinate2D(latitude: self.memory.xCord, longitude: self.memory.yCord)
+        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+        myAnnotation.coordinate = location
+        myAnnotation.title = "Your Memory Location"
+        self.memoryMap.addAnnotation(myAnnotation)
+        
+        //center map around pin
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
+        self.memoryMap.setRegion(region, animated: true)
     }
     
 

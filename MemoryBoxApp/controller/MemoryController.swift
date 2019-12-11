@@ -12,33 +12,55 @@ import Foundation
 import Kingfisher
 
 class MemoryController {
-    func getAllMemories(completion: @escaping ([Memory])->()) {
-        var memoryList = [Memory]()
+    private func getUserMemoryList(completion: @escaping ([String])->()) {
         let db = Firestore.firestore()
-        //get list of owned memories from user
-        //break up list into batches of 10, store as object/dictonary
-        //loop above object/dictonary to query below
-        //db.collection("memories").whereField("memoryIDs", in: array).getDocuments()
-        db.collection("memories").getDocuments() { (querySnapshot, err) in
+        var ownedMemoryList = [String]()
+        
+        db.collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() { (querySnapshot, err) in
             if let err = err {
-                print("Error getting memories: \(err)")
+                print("Error getting user: \(err)")
+                completion(ownedMemoryList)
                 return
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    let mName = data["memory_name"] as? String ?? ""
-                    let mDesc = data["memory_description"] as? String ?? ""
-                    let mDate = data["memory_date"] as? Date ?? Date()
-                    let mImg = data["memory_image"] as? String ?? ""
-                    let mXCord = data["memory_location_x"] as? Double ?? 0.0
-                    let mYCord = data["memory_location_y"] as? Double ?? 0.0
-                    
-                    let newMemory = Memory(memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: mImg, x: mXCord, y: mYCord)
-                    
-                    memoryList.append(newMemory)
+                    ownedMemoryList = data["user_memory"] as? [String] ?? []
                 }
-                print("Finished collecting memory collection data")
-                completion(memoryList)
+                print(ownedMemoryList)
+                print("Successfully retrieved owned user memories")
+                completion(ownedMemoryList)
+            }
+        }
+    }
+    
+    func getAllMemories(completion: @escaping ([Memory])->()) {
+        let db = Firestore.firestore()
+        var memoryList = [Memory]()
+        
+        self.getUserMemoryList() { ownedMemoryList in
+            db.collection("memories").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting memories: \(err)")
+                    return
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        if (ownedMemoryList.contains(document.documentID)) {
+                            let mName = data["memory_name"] as? String ?? ""
+                            let mDesc = data["memory_description"] as? String ?? ""
+                            let mDate = data["memory_date"] as? Date ?? Date()
+                            let mImg = data["memory_image"] as? String ?? ""
+                            let mXCord = data["memory_location_x"] as? Double ?? 0.0
+                            let mYCord = data["memory_location_y"] as? Double ?? 0.0
+                            
+                            let newMemory = Memory(memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: mImg, x: mXCord, y: mYCord)
+                            
+                            memoryList.append(newMemory)
+                        }
+                    }
+                    print("Finished collecting memory collection data")
+                    completion(memoryList)
+                }
             }
         }
     }
@@ -88,7 +110,7 @@ class MemoryController {
     private func sendMemoryToDB(imageUID: String, newMemory: Memory, completion: @escaping (Bool)->()) {
         let db = Firestore.firestore()
 
-        let document = db.collection("memories").addDocument(data: [
+        let memory = db.collection("memories").addDocument(data: [
             "memory_name": newMemory.memoryName,
             "memory_description": newMemory.memoryDesc,
             "memory_date": newMemory.memoryDate,
@@ -104,20 +126,21 @@ class MemoryController {
             
             print("successfully saved memory to database")
         }
-        
-//        db.collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid).getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting user: \(err)")
-        //          completion(false)
-//                return
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    let data = document.data()
-//                    add document.documentID to users owned memory list
-//                }
-//                print("Finished collecting memory collection data")
-//            }
-//        }
+
+        db.collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting user: \(err)")
+                  completion(false)
+                return
+            } else {
+                for document in querySnapshot!.documents {
+                    db.collection("users").document(document.documentID).updateData([
+                        "user_memory": FieldValue.arrayUnion([memory.documentID])
+                    ])
+                }
+                print("Successfully added memory to user memory array")
+            }
+        }
         completion(true)
     }
     

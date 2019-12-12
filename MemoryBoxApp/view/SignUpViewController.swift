@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func btnSignUp(_ sender: Any) {
-    
+        
         //validate the fields
         let error = validateFields()
         
@@ -77,15 +77,15 @@ class SignUpViewController: UIViewController {
             // Transition to the home screen
             self.transitionToHome()
         }
-            
+        
     }
     
     private func setupButtons(){
-          
-          signupBtn.layer.cornerRadius = 20
-          
-          
-      }
+        
+        signupBtn.layer.cornerRadius = 20
+        
+        
+    }
     
     func showError(_ message: String){
         lblErrorMsg.text = message

@@ -394,7 +394,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDW-5M-5lU">
                                         <rect key="frame" x="0.0" y="285" width="334" height="60"/>
-                                        <color key="backgroundColor" red="0.62666690349999998" green="0.89822053909999999" blue="0.87843400240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="wOD-v9-ANM"/>
                                         </constraints>
@@ -409,7 +409,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eip-lb-ff1">
                                         <rect key="frame" x="0.0" y="380" width="334" height="60"/>
-                                        <color key="backgroundColor" red="1" green="0.77244824171066284" blue="0.0012764275306835771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="5zr-c4-L39"/>
                                         </constraints>
@@ -470,6 +470,7 @@
                         <outlet property="manualButton" destination="bDW-5M-5lU" id="WaB-rV-A5B"/>
                         <outlet property="memoryMapButton" destination="qiV-Tt-OBm" id="2el-wQ-yh0"/>
                         <outlet property="newMemoryButton" destination="AQ6-St-PUr" id="z1f-cR-9pm"/>
+                        <outlet property="updateUserButton" destination="eip-lb-ff1" id="9sf-B8-sGP"/>
                         <outlet property="viewMemoryButton" destination="Ic8-ph-PcD" id="Avq-eG-366"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logoutsegue" id="les-FB-W29"/>
                     </connections>
@@ -514,21 +515,104 @@
             </objects>
             <point key="canvasLocation" x="1343" y="864"/>
         </scene>
-        <!--View Controller-->
+        <!--Customer Support View Controller-->
         <scene sceneID="f38-A3-sKq">
             <objects>
-                <viewController id="8lS-fq-62g" sceneMemberID="viewController">
+                <viewController id="8lS-fq-62g" customClass="CustomerSupportViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQe-nL-vZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Y2V-gc-qu6">
+                                <rect key="frame" x="12" y="275" width="374" height="358"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to get in touch? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRz-K4-Np5">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We would love to hear from you." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSH-K1-Xs6">
+                                        <rect key="frame" x="0.0" y="91.5" width="374" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIP-T8-W9p">
+                                        <rect key="frame" x="0.0" y="178" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Luk-AI-Qtp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="CALL" image="phone.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnCallClick:" destination="8lS-fq-62g" eventType="touchUpInside" id="x5H-Vh-P5Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIR-IO-TxD">
+                                        <rect key="frame" x="0.0" y="298" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="PDh-HG-ZHN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="EMAIL" image="paperplane.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendEmail" destination="8lS-fq-62g" eventType="touchUpInside" id="Q4E-OV-3yN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qjz-C3-hv7">
+                                <rect key="frame" x="20" y="56.5" width="167" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108.5" id="U3I-Th-e4U"/>
+                                    <constraint firstAttribute="width" constant="167" id="UcD-Ve-2Of"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xpc-Xt-eNB">
+                                <rect key="frame" x="195" y="57.5" width="167" height="108"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Support" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-Zl-DAL">
+                                <rect key="frame" x="20" y="203" width="374" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J5c-Zl-DAL" firstAttribute="trailing" secondItem="SQe-nL-vZY" secondAttribute="trailingMargin" id="2Ah-TK-c7F"/>
+                            <constraint firstItem="4eG-uB-kHg" firstAttribute="bottom" secondItem="Y2V-gc-qu6" secondAttribute="bottom" constant="175" id="2SI-S3-maW"/>
+                            <constraint firstItem="qjz-C3-hv7" firstAttribute="leading" secondItem="J5c-Zl-DAL" secondAttribute="leading" id="EbN-ff-SQd"/>
+                            <constraint firstItem="Y2V-gc-qu6" firstAttribute="leading" secondItem="4eG-uB-kHg" secondAttribute="leading" constant="20" id="Iej-O6-Ln1"/>
+                            <constraint firstItem="J5c-Zl-DAL" firstAttribute="top" secondItem="qjz-C3-hv7" secondAttribute="bottom" constant="38.5" id="J6Y-Mj-JtL"/>
+                            <constraint firstItem="Y2V-gc-qu6" firstAttribute="top" secondItem="J5c-Zl-DAL" secondAttribute="bottom" constant="26.5" id="Ofd-td-5yy"/>
+                            <constraint firstItem="J5c-Zl-DAL" firstAttribute="leading" secondItem="SQe-nL-vZY" secondAttribute="leadingMargin" id="Ph2-km-2cF"/>
+                            <constraint firstItem="4eG-uB-kHg" firstAttribute="trailing" secondItem="Xpc-Xt-eNB" secondAttribute="trailing" constant="52" id="SEc-pJ-vLu"/>
+                            <constraint firstItem="Xpc-Xt-eNB" firstAttribute="leading" secondItem="qjz-C3-hv7" secondAttribute="trailing" constant="8" id="jGJ-hF-BYd"/>
+                            <constraint firstItem="qjz-C3-hv7" firstAttribute="top" secondItem="Xpc-Xt-eNB" secondAttribute="top" id="kl0-f8-PC3"/>
+                            <constraint firstItem="J5c-Zl-DAL" firstAttribute="top" secondItem="Xpc-Xt-eNB" secondAttribute="bottom" constant="36.5" id="rj9-xH-Ffe"/>
+                            <constraint firstItem="4eG-uB-kHg" firstAttribute="trailing" secondItem="Y2V-gc-qu6" secondAttribute="trailing" constant="20" id="s43-qt-7lZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4eG-uB-kHg"/>
                     </view>
                     <navigationItem key="navigationItem" id="PFf-QB-hNc"/>
+                    <connections>
+                        <outlet property="btnCall" destination="lIP-T8-W9p" id="FZS-hJ-xlY"/>
+                        <outlet property="btnEmail" destination="zIR-IO-TxD" id="3pp-y4-X1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ot-5n-gu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="864"/>
+            <point key="canvasLocation" x="2230.434782608696" y="863.83928571428567"/>
         </scene>
         <!--Add Memory View Controller-->
         <scene sceneID="aI3-i4-qKC">
@@ -785,8 +869,10 @@
         <image name="gift.fill" catalog="system" width="64" height="64"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="mappin.circle" catalog="system" width="64" height="60"/>
+        <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
+        <image name="phone.fill" catalog="system" width="64" height="56"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>

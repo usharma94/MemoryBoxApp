@@ -14,11 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var viewMemoryButton: UIButton!
     @IBOutlet weak var memoryMapButton:
     UIButton!
-    
     @IBOutlet weak var updateUserButton: UIButton!
-    
     @IBOutlet weak var manualButton: UIButton!
-    
     @IBOutlet weak var logoutBtn: UIButton!
     
     

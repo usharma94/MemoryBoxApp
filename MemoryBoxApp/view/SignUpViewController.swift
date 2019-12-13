@@ -29,16 +29,8 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         setupButtons()
-        
-        // Do any additional setup after loading the view.
     }
-    //check fields and validate that data is correct, if corret returns nil
-    
-    //***********************************
-    //***********************************
-    //NON UI CODE NEEDS TO BE MOVED TO CONTROLLER 
-    //***********************************
-    //***********************************
+   
     
     func validateFields() -> String? {
         

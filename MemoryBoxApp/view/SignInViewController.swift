@@ -12,17 +12,10 @@ import FirebaseAuth
 class SignInViewController: UIViewController {
     
     //Outlets Textfiels
-    
     @IBOutlet weak var txtEmail: UITextField!
-    
-    
     @IBOutlet weak var txtPassword: UITextField!
-    
-    //Buttons
     @IBOutlet weak var signupButton: UIButton!
-    //Properties
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var errorLbl: UILabel!
     
     override func viewDidLoad() {

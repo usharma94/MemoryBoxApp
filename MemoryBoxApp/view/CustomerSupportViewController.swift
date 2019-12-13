@@ -4,7 +4,7 @@
 //
 //  Created by Upma  Sharma on 2019-12-11.
 //  Copyright © 2019 Upma  Sharma. All rights reserved.
-//
+// Tested on emulator thus calls and emails do not go through
 
 import UIKit
 import CallKit // used for making calls

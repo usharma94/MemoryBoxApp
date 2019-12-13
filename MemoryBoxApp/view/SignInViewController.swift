@@ -68,6 +68,9 @@ class SignInViewController: UIViewController {
                 }
             })
             
+        }else{
+            self.errorLbl.alpha = 1
+            self.errorLbl.text = "Invalid Login"
         }
         
     }

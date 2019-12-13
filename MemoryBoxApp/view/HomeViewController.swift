@@ -15,18 +15,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var memoryMapButton:
     UIButton!
     
+    @IBOutlet weak var updateUserButton: UIButton!
+    
     @IBOutlet weak var manualButton: UIButton!
     
     @IBOutlet weak var logoutBtn: UIButton!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().currentUser?.email
-        
         setupButtons()
+        preventBackNavigation()
+         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func preventBackNavigation(){
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false;
+        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false;
+        
     }
     
     private func setupButtons(){
@@ -36,6 +48,7 @@ class HomeViewController: UIViewController {
         memoryMapButton.layer.cornerRadius = 20
         logoutBtn.layer.cornerRadius = 20
         manualButton.layer.cornerRadius = 20
+        updateUserButton.layer.cornerRadius = 20
         
         
     }
@@ -47,5 +60,11 @@ class HomeViewController: UIViewController {
         print("logout successful")
         performSegue(withIdentifier: "logoutsegue", sender: self)
     }
+    
+    
+    
+
+    
+    
     
 }

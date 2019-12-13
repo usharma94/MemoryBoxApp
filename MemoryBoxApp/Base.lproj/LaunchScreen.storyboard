@@ -23,7 +23,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.7584605753" green="0.244688723" blue="0.32071547340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.71933913230000002" green="0.90235418079999996" blue="0.87058788539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qXE-TF-6df" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IHX-IE-zff"/>
                             <constraint firstItem="qXE-TF-6df" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="NAK-yc-ECN"/>

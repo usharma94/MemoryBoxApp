@@ -9,6 +9,7 @@
 import Foundation
 
 class User {
+    var userUID: String = ""
     var firstName: String = ""
     var lastName: String = ""
     var phone:String = ""
@@ -18,7 +19,8 @@ class User {
     var userMemory: Array = [String]()
     
     
-    init(firstName: String, lastName: String, phone: String, email: String, password: String, userMemory: [String]){
+    init(userUID: String, firstName: String, lastName: String, phone: String, email: String, password: String, userMemory: [String]){
+        self.userUID = userUID
         self.firstName = firstName
         self.lastName = lastName
         self.phone = phone

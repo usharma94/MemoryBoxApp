@@ -12,17 +12,17 @@
             <objects>
                 <viewController id="nPZ-h8-Olr" customClass="MemoryMapViewController" customModule="MemoryBoxApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pBE-IG-rP6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-mb-B14">
-                                <rect key="frame" x="20" y="64" width="374" height="21"/>
+                                <rect key="frame" x="20" y="20" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-R6-aaN">
-                                <rect key="frame" x="20" y="105" width="374" height="737"/>
+                                <rect key="frame" x="20" y="61" width="374" height="727"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -37,6 +37,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Swg-ob-kVM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Pqh-mH-FBZ"/>
+                    <connections>
+                        <outlet property="memoryMap" destination="fd6-R6-aaN" id="UY2-IS-Dml"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Re-VG-ahs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,13 +55,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uX4-Pq-nap">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_user" textLabel="YQx-nN-vd2" style="IBUITableViewCellStyleDefault" id="uX4-Pq-nap" customClass="UserCell" customModule="MemoryBoxApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uX4-Pq-nap" id="fRx-jk-K4t">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YQx-nN-vd2">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userName" destination="YQx-nN-vd2" id="Zit-Xq-u3U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -393,6 +409,9 @@
                                         <state key="normal" title="Memory Map" image="mappin.circle" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="nPZ-h8-Olr" kind="show" id="uYf-WZ-UfJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDW-5M-5lU">
                                         <rect key="frame" x="0.0" y="285" width="334" height="60"/>
@@ -421,7 +440,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="updateUserBtn:" destination="czh-Rd-eBR" eventType="touchUpInside" id="grD-jx-B8g"/>
                                             <segue destination="tx5-V3-TTF" kind="show" id="HqR-EX-YIy"/>
                                         </connections>
                                     </button>
@@ -906,6 +924,9 @@
                                 <state key="normal" title="Share Memory" image="square.and.arrow.up" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareMemory" destination="Aom-8p-yqi" eventType="touchDown" id="Frt-0G-3ZQ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-rd-UCN">
                                 <rect key="frame" x="20" y="383" width="374" height="356.5"/>

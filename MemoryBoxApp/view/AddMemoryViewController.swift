@@ -55,11 +55,13 @@ class AddMemoryViewController: UIViewController {
             let mDesc = self.memoryDesc.text!
             let mDate = self.memoryDate.date
             
-            let newMemory = Memory(memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: "", x: self.mapCords?.latitude ?? 0.0, y: self.mapCords?.longitude ?? 0.0)
+            let newMemory = Memory(memoryID: "", memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: "", x: self.mapCords?.latitude ?? 0.0, y: self.mapCords?.longitude ?? 0.0)
 
             self.memoryController.createMemory(imageView: self.imageView, memory: newMemory) { success in
                 if (success) {
                     self.addMemoryBtn.isEnabled = success
+                    
+                    self.transitionToHome()
                 } 
             }
         } else {
@@ -81,18 +83,13 @@ class AddMemoryViewController: UIViewController {
     private func setupButtons(){
         addMemoryBtn.layer.cornerRadius = 20
     }
+    
+    func transitionToHome() {
+        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = mainSB.instantiateViewController(withIdentifier: "HomeScene") as! HomeViewController
+        navigationController?.pushViewController(homeVC, animated: true)
+    }
 }
-//
-//            //zoom out the map
-//            var region : MKCoordinateRegion = self.myMap.region
-//            var span : MKCoordinateSpan = self.myMap.region.span
-//            span.latitudeDelta *= 8
-//            span.longitudeDelta *= 8
-//            region.span = span
-//            self.myMap.setRegion(region, animated: true)
-//
-//        })
-//    }
 
 extension AddMemoryViewController : MKMapViewDelegate {
     func addLongPressGesture(){

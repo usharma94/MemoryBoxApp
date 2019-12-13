@@ -8,6 +8,7 @@
 
 import Foundation
 class Memory {
+    var memoryID: String = ""
     var memoryName: String = ""
     var memoryDesc: String = ""
     var memoryDate: Date = Date()
@@ -15,7 +16,8 @@ class Memory {
     var yCord: Double = 0.0
     var memoryImage: String = ""
     
-    init(memoryName: String, memoryDesc: String, memoryDate: Date, memoryImage: String, x: Double, y: Double){
+    init(memoryID: String, memoryName: String, memoryDesc: String, memoryDate: Date, memoryImage: String, x: Double, y: Double){
+        self.memoryID = memoryID
         self.memoryName = memoryName
         self.memoryDesc = memoryDesc
         self.memoryDate = memoryDate

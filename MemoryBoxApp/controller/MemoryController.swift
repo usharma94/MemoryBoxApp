@@ -46,6 +46,7 @@ class MemoryController {
                     for document in querySnapshot!.documents {
                         let data = document.data()
                         if (ownedMemoryList.contains(document.documentID)) {
+                            let mUID = document.documentID
                             let mName = data["memory_name"] as? String ?? ""
                             let mDesc = data["memory_description"] as? String ?? ""
                             let mDate = data["memory_date"] as? Date ?? Date()
@@ -53,7 +54,7 @@ class MemoryController {
                             let mXCord = data["memory_location_x"] as? Double ?? 0.0
                             let mYCord = data["memory_location_y"] as? Double ?? 0.0
                             
-                            let newMemory = Memory(memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: mImg, x: mXCord, y: mYCord)
+                            let newMemory = Memory(memoryID: mUID, memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: mImg, x: mXCord, y: mYCord)
                             
                             memoryList.append(newMemory)
                         }
@@ -126,22 +127,26 @@ class MemoryController {
             
             print("successfully saved memory to database")
         }
-
-        db.collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid).getDocuments() { (querySnapshot, err) in
+        self.updateUserMemory(userUID: Auth.auth().currentUser!.uid, memoryUID: memory.documentID)
+        completion(true)
+    }
+    
+    func updateUserMemory(userUID: String, memoryUID: String) {
+        let db = Firestore.firestore()
+        
+        db.collection("users").whereField("uid", isEqualTo: userUID).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting user: \(err)")
-                  completion(false)
                 return
             } else {
                 for document in querySnapshot!.documents {
                     db.collection("users").document(document.documentID).updateData([
-                        "user_memory": FieldValue.arrayUnion([memory.documentID])
+                        "user_memory": FieldValue.arrayUnion([memoryUID])
                     ])
                 }
                 print("Successfully added memory to user memory array")
             }
         }
-        completion(true)
     }
     
     private func uploadImg(imageView: UIImageView, completion: @escaping (String)->()) {

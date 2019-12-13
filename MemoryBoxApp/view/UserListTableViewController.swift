@@ -9,27 +9,68 @@
 import UIKit
 
 class UserListTableViewController: UITableViewController {
+    
+    var memoryUID: String = ""
+    
+    private var userList = [User]()
+    let userController = UserController()
+    let memoryController = MemoryController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.loadUsers()
+    }
+    
+    func loadUsers() {
+        self.userController.getAllUser() { list in
+            self.userList = list
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_user", for: indexPath) as! UserCell
+        
+        if indexPath.row < userList.count
+        {
+            let user = userList[indexPath.row]
+            cell.userName.text = user.firstName + " " + user.lastName
+            if (user.userMemory.contains(self.memoryUID)) {
+                cell.isUserInteractionEnabled = false
+                cell.backgroundColor = UIColor.green
+            }
+        }
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell_user", for: indexPath) as! UserCell
+        
+        if indexPath.row < userList.count
+        {
+            let user = userList[indexPath.row]
+            self.memoryController.updateUserMemory(userUID: user.userUID, memoryUID: self.memoryUID)
+            user.userMemory.append(self.memoryUID)
+            
+            self.tableView.reloadData()
+        }
+//        let memory = memoryList[indexPath.row]
+//        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let detailsVC = mainSB.instantiateViewController(withIdentifier: "DetailsScene") as! MemoryDetailViewController
+//        detailsVC.memory = memory
+//        navigationController?.pushViewController(detailsVC, animated: true)
     }
 
     /*

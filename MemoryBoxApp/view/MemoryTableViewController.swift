@@ -53,7 +53,9 @@ class MemoryTableViewController: UITableViewController {
         let memory = memoryList[indexPath.row]
         let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC = mainSB.instantiateViewController(withIdentifier: "DetailsScene") as! MemoryDetailViewController
+        
         detailsVC.memory = memory
+        
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 

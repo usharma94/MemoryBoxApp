@@ -22,6 +22,8 @@
 		6E6A340823A19B7200556F98 /* ManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340723A19B7200556F98 /* ManualVC.swift */; };
 		6E6A340A23A19BF700556F98 /* AppManual.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A340923A19BF700556F98 /* AppManual.html */; };
 		6E6A340C23A1DB6B00556F98 /* CustomerSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340B23A1DB6B00556F98 /* CustomerSupportViewController.swift */; };
+		6E6A340E23A3168700556F98 /* UpdateUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340D23A3168700556F98 /* UpdateUserController.swift */; };
+		6E6A341023A3172800556F98 /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6A340F23A3172800556F98 /* UpdateUserViewController.swift */; };
 		6E7EA8472386E2C10069DEF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */; };
 		6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */; };
 		6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2CE8C2377BFC5005E64E4 /* SceneDelegate.swift */; };
@@ -48,6 +50,8 @@
 		6E6A340723A19B7200556F98 /* ManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualVC.swift; sourceTree = "<group>"; };
 		6E6A340923A19BF700556F98 /* AppManual.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = AppManual.html; sourceTree = "<group>"; };
 		6E6A340B23A1DB6B00556F98 /* CustomerSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportViewController.swift; sourceTree = "<group>"; };
+		6E6A340D23A3168700556F98 /* UpdateUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserController.swift; sourceTree = "<group>"; };
+		6E6A340F23A3172800556F98 /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
 		6E7EA8462386E2C10069DEF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF2CE872377BFC5005E64E4 /* MemoryBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2CE8A2377BFC5005E64E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				4E6992C1237DCE1C00243400 /* MemoryMapViewController.swift */,
 				4EF0E1F023A04E930040E764 /* UserListTableViewController.swift */,
 				6E6A340B23A1DB6B00556F98 /* CustomerSupportViewController.swift */,
+				6E6A340F23A3172800556F98 /* UpdateUserViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				4E32B01B23908004002F0FE0 /* MemoryController.swift */,
 				6E6A340523A18A4300556F98 /* UserController.swift */,
 				6E6A340723A19B7200556F98 /* ManualVC.swift */,
+				6E6A340D23A3168700556F98 /* UpdateUserController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				4E6992B8237DCB4A00243400 /* HomeViewController.swift in Sources */,
 				4E32B01A23907ED7002F0FE0 /* MemoryCell.swift in Sources */,
 				4E32B01C23908004002F0FE0 /* MemoryController.swift in Sources */,
+				6E6A341023A3172800556F98 /* UpdateUserViewController.swift in Sources */,
 				6EF2CE8F2377BFC5005E64E4 /* SignInViewController.swift in Sources */,
 				4E6992C0237DCCBA00243400 /* MemoryTableViewController.swift in Sources */,
 				6EF2CE8B2377BFC5005E64E4 /* AppDelegate.swift in Sources */,
@@ -315,6 +322,7 @@
 				6E6A340623A18A4300556F98 /* UserController.swift in Sources */,
 				4EF0E1F123A04E930040E764 /* UserListTableViewController.swift in Sources */,
 				6EF2CE8D2377BFC5005E64E4 /* SceneDelegate.swift in Sources */,
+				6E6A340E23A3168700556F98 /* UpdateUserController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

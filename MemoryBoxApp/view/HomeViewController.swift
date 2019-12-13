@@ -22,13 +22,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var logoutBtn: UIButton!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().currentUser?.email
-        
         setupButtons()
+        preventBackNavigation()
+         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func preventBackNavigation(){
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false;
+        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false;
+        
     }
     
     private func setupButtons(){
@@ -50,5 +60,11 @@ class HomeViewController: UIViewController {
         print("logout successful")
         performSegue(withIdentifier: "logoutsegue", sender: self)
     }
+    
+    
+    
+
+    
+    
     
 }

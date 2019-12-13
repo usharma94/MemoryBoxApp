@@ -57,8 +57,9 @@ class SignInViewController: UIViewController {
                     if let myError = error?.localizedDescription
                     {
                         print(myError)
-                        self.errorLbl.alpha = 1
-                        self.errorLbl.text = "Invalid Login"
+//                        self.errorLbl.alpha = 1
+//                        self.errorLbl.text = "Invalid Login"
+                        self.errorMessage()
                        
                     }else{
                         print("Failed to Login")
@@ -69,8 +70,9 @@ class SignInViewController: UIViewController {
             })
             
         }else{
-            self.errorLbl.alpha = 1
-            self.errorLbl.text = "Invalid Login"
+//            self.errorLbl.alpha = 1
+//            self.errorLbl.text = "Invalid Login"
+            errorMessage()
         }
         
     }
@@ -82,6 +84,12 @@ class SignInViewController: UIViewController {
           navigationController?.pushViewController(homeVC, animated: true)
           
       }
+    
+    func errorMessage(){
+        let alert = UIAlertController(title: "Invalid Login", message: "Invalid email or password.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
     
 }
 

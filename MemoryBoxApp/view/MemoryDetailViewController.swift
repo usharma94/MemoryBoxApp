@@ -11,6 +11,7 @@ import MapKit
 
 class MemoryDetailViewController: UIViewController {
     
+    @IBOutlet weak var btnShareMemory: UIButton!
     @IBOutlet weak var memoryName: UILabel!
     @IBOutlet weak var memoryDesc: UILabel!
     @IBOutlet weak var memoryDate: UILabel!
@@ -37,6 +38,7 @@ class MemoryDetailViewController: UIViewController {
        self.memoryController.downloadImg(imageView: self.imageView, uid: memory.memoryImage)
         
         self.setupMap()
+        btnShareMemory.layer.cornerRadius = 20
     }
     
     func setupMap() {

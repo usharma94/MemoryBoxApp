@@ -27,7 +27,7 @@ class AddMemoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
-
+        
         memoryMap.mapType = MKMapType.satellite
         memoryMap.isZoomEnabled = true
         memoryMap.isScrollEnabled = true
@@ -56,7 +56,7 @@ class AddMemoryViewController: UIViewController {
             let mDate = self.memoryDate.date
             
             let newMemory = Memory(memoryName: mName, memoryDesc: mDesc, memoryDate: mDate, memoryImage: "", x: self.mapCords?.latitude ?? 0.0, y: self.mapCords?.longitude ?? 0.0)
-
+            
             self.memoryController.createMemory(imageView: self.imageView, memory: newMemory) { success in
                 if (success) {
                     self.addMemoryBtn.isEnabled = success
@@ -64,6 +64,8 @@ class AddMemoryViewController: UIViewController {
             }
         } else {
             print("Error validating memory creation fields")
+            errorMessage()
+            
         }
     }
     
@@ -75,7 +77,7 @@ class AddMemoryViewController: UIViewController {
         }
         return false
     }
-
+    
     //Private functions
     
     private func setupButtons(){
@@ -100,7 +102,7 @@ extension AddMemoryViewController : MKMapViewDelegate {
         longPressRecogniser.minimumPressDuration = 1.0 //user needs to press for 2 seconds
         self.memoryMap.addGestureRecognizer(longPressRecogniser)
     }
-
+    
     @objc func handleLongPress(_ gestureRecognizer:UIGestureRecognizer){
         if gestureRecognizer.state != .began{
             return
@@ -199,6 +201,12 @@ extension AddMemoryViewController : CLLocationManagerDelegate {
         
         //add the pin on the map
         memoryMap.addAnnotation(myAnnotation)
+    }
+    
+    func errorMessage(){
+        let alert = UIAlertController(title: "Empty From Fields", message: "One or more form fields are missing. Please try again.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 
